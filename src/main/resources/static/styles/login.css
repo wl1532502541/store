@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+.background{
+    background-image: url("../pics/login.jpg");
+    /*height:500px;*/
+    padding: 100px 0;
+}
+
+.loginForm{
+    margin:50px auto 200px 50px;
+    border:1px solid transparent;
+    padding:50px 0 0 0;
+    height: 400px;
+    width:500px;
+    background-color: #FFFFFF;
+	/* text-align:center; */
+	/* transform实现居中 */
+    /*position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);!* 这里的50%是相对自己的宽高 *!*/
+}
+.loginForm input,button,.errorMsg{
+    line-height:25px;
+    display: block;
+    width:80%;
+    height:42px;
+    margin: 0 auto 30px;
+}
+/*.loginForm button{
+    width: 80%;
+    height:42px;
+    display: block;
+    margin: 0 auto;
+}
+.loginForm .errorMsg{
+    width: 80%;
+    height:42px;
+    display: block;
+    margin: 0 auto;
+}*/

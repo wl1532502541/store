@@ -1,0 +1,28 @@
+@charset "UTF-8";
+label{
+    position: relative;
+}
+label input{
+    width: 0;
+}
+input~div{
+    display:none;
+    position:absolute;
+    width: 900px;
+    background-color:#3098F8;
+    top: 30px;
+    float: left;
+}
+/*label~div.active{
+    display:block;
+}*/
+input:checked~div{ /* ~ 所有相邻兄弟选择器*/
+    display: block;
+}
+input:checked+span{	/* + 下一个相邻兄弟选择器*/
+    display:inline-block;
+    border-bottom: 3px solid #3098F8;
+}
+td{
+    padding:0 30px;
+}

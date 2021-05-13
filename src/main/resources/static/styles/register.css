@@ -1,0 +1,21 @@
+@charset "UTF-8";
+.background{
+    background-image: url("../pics/login.jpg");
+    padding: 100px 0;
+}
+
+.registerForm {
+    margin:50px auto 200px 50px;
+    border:1px solid transparent;
+    padding:50px 0 0 0;
+    height: 400px;
+    width:500px;
+    background-color: #FFFFFF;
+}
+.registerForm input,button,.errorMsg{
+    line-height:25px;
+    display: block;
+    width:80%;
+    height:42px;
+    margin: 0 auto 30px;
+}
