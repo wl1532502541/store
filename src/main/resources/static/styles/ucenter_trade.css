@@ -9,9 +9,10 @@ input~div{
     display:none;
     position:absolute;
     width: 900px;
-    background-color:#3098F8;
+    /*background-color:#3098F8;*/
+    background-color: #FFFFFF;
     top: 30px;
-    float: left;
+    /*float: left;*/
 }
 /*label~div.active{
     display:block;
@@ -24,5 +25,5 @@ input:checked+span{	/* + 下一个相邻兄弟选择器*/
     border-bottom: 3px solid #3098F8;
 }
 td{
-    padding:0 30px;
+    padding:0 10px;
 }

@@ -5,14 +5,14 @@ import org.hibernate.annotations.Proxy;
 
 import javax.persistence.*;
 
-
+@Data
 @Entity
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    public User(){};
+    public User(){}
 
     public User(String name,String password){
         this.name=name;
@@ -30,13 +30,13 @@ public class User {
 
     private Boolean isAdmin;//是否是管理员
 
-    private String address;//住址
+    private String address;//默认收货地址
 
     private String payPwd;//支付密码
 
     private double balance;//余额
 
-    public Long getId() {
+    /*public Long getId() {
         return id;
     }
 
@@ -90,5 +90,5 @@ public class User {
 
     public void setBalance(double balance) {
         this.balance = balance;
-    }
+    }*/
 }

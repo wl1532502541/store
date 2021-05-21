@@ -1,0 +1,46 @@
+@charset "UTF-8";
+.view{
+    width: 45%;
+    height: 600px;
+}
+.infos{
+    width: 45%;
+    height: 600px;
+}
+.infos button{
+    width: 40%;
+    height: 60px;
+    border: 1px solid #3098F8;
+}
+.infos button:nth-child(2){
+    background-color: #3098F8;
+}
+.infos button img{
+    max-height: 50px;
+    max-width: 50px;
+}
+.infos h6{
+    color: #a4a4a4;
+}
+del{
+    color: #a4a4a4;
+    font-weight: 700;
+    font-size: 1em;
+}
+.buyFormWrap{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    background-color: #3098F8;
+    padding: 50px 20px;
+    border-radius: 8px;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .2);
+}
+.buyFormWrap.active{
+    display: block;
+}
+.buyFormWrap input,select {
+    display: block;
+}

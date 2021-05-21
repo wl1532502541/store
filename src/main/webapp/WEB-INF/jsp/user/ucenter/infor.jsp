@@ -1,17 +1,13 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: wl
-  Date: 2021/5/11
-  Time: 22:32
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>您的潮趣鞋店</title>
     <link type="text/css" rel="stylesheet" href="/styles/ucenter.css"/>
+    <link type="text/css" rel="stylesheet" href="/styles/reset.css"/>
+    <link type="text/css" rel="stylesheet" href="/styles/common.css"/>
 </head>
 <body>
 <!-- 顶部导航栏 -->
@@ -24,11 +20,13 @@
             <h1>INFOR</h1>
             <h3>用户名</h3>
             ${sessionScope.user.getName()}
-            <h3>详细地址</h3>
-            <c:if test="${sessionScope.user.getAddress()}==''">
+            <h3>默认收货地址</h3>
+            <c:if test="${sessionScope.user.getAddress()==null||sessionScope.user.getAddress().equals('')}">
                 暂未填写
             </c:if>
-            ${sessionScope.user.getAddress()}
+            <c:if test="${sessionScope.user.getAddress()!=null||!(sessionScope.user.getAddress().equals(''))}">
+                ${sessionScope.user.getAddress()}
+            </c:if>
         </div>
     </div>
 </div>

@@ -3,3 +3,130 @@ html,body{
 	margin:0;
 	padding:0;
 }
+.main {
+
+	width: 980px;
+	height: 455px;
+	/*margin-top: 10px;
+	margin-left: 70px;*/
+	margin: 10px auto 10px;
+}
+
+.focus {
+	position: relative;
+	float: left;
+	width: 980px;
+	height: 456px;
+	background: url("../pics/uploads/focus.jpg") no-repeat;
+}
+
+.focus img {
+	display: block;
+	width: 980px;
+	height: 456px;
+}
+
+.arrow {
+	width: 30px;
+	height: 40px;
+	background-color: rgba(0, 0, 0, .4);
+	text-align: center;
+	line-height: 40px;
+	font-family: 'icomoon';
+	font-size: 16px;
+	color: #fff;
+}
+
+
+
+.arrow_l {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin-top: -20px;
+}
+
+.arrow_r {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	margin-top: -20px;
+}
+
+.focus ul {
+	position: absolute;
+	left: 35px;
+	bottom: 35px;
+}
+
+.focus ul li {
+	float: left;
+	width: 10px;
+	height: 10px;
+	border: 2px solid rgba(255, 116, 139, .3);
+
+	border-radius: 50%;
+	margin-left: 5px;
+}
+
+.focus ul li:hover {
+	background-color: rgba(255, 116, 139, .3);
+	border: 2px solid rgba(255, 116, 139, .3);
+	cursor: pointer;
+}
+
+.focus ul li:first-child {
+	background-color: rgba(255, 116, 139, .3);
+}
+
+
+/* 推荐区域 */
+.recommend {
+	height: 163px;
+	margin-top: 10px;
+	background-color: #ebebeb;
+}
+
+/* 推荐区的头部 */
+.recom_hd {
+	width: 206px;
+	height: 160px;
+	background-color: #5c5251;
+	text-align: center;
+}
+
+.recom_hd img {
+	display: block;
+	margin-top: 31px;
+	margin-left: 70px;
+	margin-bottom: 10px;
+}
+
+.recom_hd h3 {
+	font-size: 18px;
+	font-weight: normal;
+	color: white;
+}
+
+/* 推荐区的内容部分 */
+.recom_bd ul {
+	margin-top: 10px;
+}
+
+.recom_bd li {
+	float: left;
+	width: 248px;
+	height: 143px;
+	border-right: 1px solid rgba(c, c, c, .7);
+}
+
+.recom_bd li:last-child {
+	border: none;
+}
+
+.recom_bd img,
+.recom_bd a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}

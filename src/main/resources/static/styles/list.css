@@ -1,0 +1,179 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* 秒杀盒子 */
+.sk_box {
+    position: absolute;
+    top: 54px;
+    left: 185px;
+    width: 70px;
+    height: 26px;
+    padding: 3px 0 3px 15px;
+    border-left: 1px solid #3098F8;
+ 
+}
+ 
+/* 头部header部分 */
+.sec_kill_list li {
+    float: left;
+    font-size: 16px;
+    color: #000;
+    font-weight: 700;
+    line-height: 47px;
+    margin: 0 28px;
+}
+ 
+.sec_kill_con li {
+    float: left;
+    line-height: 47px;
+    margin: 0 22px;
+    font: 14px;
+}
+ 
+/* 主体部分 */
+.sec_kill_container {
+    /* 用来定位到顶部的动态导航 */
+    position: relative;
+}
+ 
+.sec_kill_bd {
+    position: relative;
+}
+ 
+.sec_kill_bd ul {
+    /* overflow: hidden; */
+    width: 1220px;
+}
+ 
+.sec_kill_goods {
+    position: relative;
+    float: left;
+    width: 288px;
+    height: 460px;
+    border: 1px solid transparent;
+    margin-right: 15px;
+    margin-top: 25px;
+}
+ 
+.sec_kill_goods:hover {
+    /*border: 1px solid #e12228;*/
+    border: 1px solid #3098F8;
+}
+ 
+.sec_kill_goods_title {
+    font-size: 14px;
+    color: #666;
+    font-weight: normal;
+    margin: 5px 0 5px 10px;
+}
+ 
+.sec_kill_goods_price em {
+    font-size: 22px;
+    color: #e60012;
+    font-weight: 700;
+    margin-left: 15px;
+}
+ 
+.sec_kill_goods_price del {
+    font-size: 14px;
+    color: #a4a4a4;
+    font-weight: 700;
+ 
+}
+ 
+.sec_kill_goods_progress {
+    margin: 5px 0 0 15px;
+    font-size: 14px;
+    color: #666666;
+}
+ 
+.progress {
+    display: inline-block;
+    width: 120px;
+    height: 10px;
+    border: 1px solid #e12228;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+ 
+.progress_in {
+    width: 87%;
+    height: 100%;
+    background-color: #b1191a;
+}
+ 
+.sec_kill_goods_progress span {
+    color: #ed282e;
+}
+ 
+.sec_kill_goods_progress i {
+    color: #ed9596;
+}
+ 
+.sec_kill_goods_buy {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 289px;
+    height: 50px;
+    background-color: #3098F8;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    color: #fff;
+}
+ 
+/* 分页部分 */
+.sec_kill_page {
+    margin: 40px 0;
+    text-align: center;
+}
+ 
+.page_num a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+    line-height: 36px;
+}
+ 
+.page_num .pn_prev,
+.page_num .pn_next {
+    width: 83px;
+}
+ 
+.page_num .current,
+.page_num .dotted {
+    border: 1px solid transparent;
+    background-color: transparent;
+}
+ 
+.to_top {
+    position: absolute;
+    right: -85px;
+    bottom: 460px;
+}
+ 
+.to_top .top {
+    overflow: hidden;
+    width: 68px;
+    height: 68px;
+    background-color: #b1191a;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+}
+ 
+.to_top:hover {
+    cursor: pointer;
+}
+ 
+.to_top .top::before {
+    content: "\ea50";
+    display: block;
+    width: 24px;
+    height: 24px;
+    font-family: 'icomoon';
+    margin: 10px auto 0;
+}

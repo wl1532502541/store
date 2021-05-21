@@ -4,8 +4,10 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
+	<title>您的潮趣鞋店</title>
 	<link type="text/css" rel="stylesheet" href="/styles/login.css"/>
+	<link type="text/css" rel="stylesheet" href="/styles/reset.css"/>
+	<link type="text/css" rel="stylesheet" href="/styles/common.css"/>
 </head>
 <body>
 	<!-- 顶部导航栏 -->

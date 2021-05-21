@@ -3,12 +3,10 @@ package com.example.store.entity;
 import lombok.Data;
 import org.hibernate.annotations.Proxy;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
+@Data
 @Entity
 public class Goods {
     @Id
@@ -19,7 +17,11 @@ public class Goods {
 
     private double price;
 
-    private Long categoryId;//分类ID
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
+
+    /*private Long categoryId;//分类ID*/
 
     private int leftCount;//余量
 
@@ -27,7 +29,7 @@ public class Goods {
 
 
 
-    public Long getId() {
+    /*public Long getId() {
         return id;
     }
 
@@ -51,13 +53,15 @@ public class Goods {
         this.price = price;
     }
 
-    public Long getCategoryId() {
+
+
+    *//*public Long getCategoryId() {
         return categoryId;
     }
 
     public void setCategoryId(Long categoryId) {
         this.categoryId = categoryId;
-    }
+    }*//*
 
     public int getLeftCount() {
         return leftCount;
@@ -73,5 +77,5 @@ public class Goods {
 
     public void setSoldCount(int soldCount) {
         this.soldCount = soldCount;
-    }
+    }*/
 }

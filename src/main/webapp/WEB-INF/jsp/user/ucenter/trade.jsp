@@ -7,9 +7,11 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>您的潮趣鞋店</title>
     <link type="text/css" rel="stylesheet" href="/styles/ucenter.css"/>
     <link type="text/css" rel="stylesheet" href="/styles/ucenter_trade.css"/>
+    <link type="text/css" rel="stylesheet" href="/styles/reset.css"/>
+    <link type="text/css" rel="stylesheet" href="/styles/common.css"/>
 </head>
 <body>
 <!-- 顶部导航栏 -->
@@ -20,98 +22,76 @@
     <div class="content">
         <div id="trade">
             <h1>TRADE</h1>
-            <% String[] stateNames= {"待发货","配送中","已完成","已取消"};%>
+            <%--<% String[] stateNames= {"待发货","配送中","已完成","已取消"};%>--%>
             <div class="wrap">
-                <c:forEach items="<%=stateNames%>" var="stateName" varStatus="varStatus">
-                    <label>
-                        <c:if test="${varStatus.count==1}">
-                            <input type="radio" name="tab" checked>
-                        </c:if>
-                        <c:if test="${varStatus.count>1}">
-                            <input type="radio" name="tab">
-                        </c:if>
-                        <span>${stateName}</span>
-                        <div>
-                            <table>
-                                <tr>
-                                    <td>订单号</td>
-                                    <td>商品id</td>
-                                    <td>商品数量</td>
-                                    <c:if test="${varStatus.count<4}">
-                                        <td>操作</td>
-                                    </c:if>
-                                </tr>
-                                <c:if test="${trades==null}">
-                                    <h1>暂无</h1>
-                                </c:if>
-                                <c:forEach items="${trades}" var="trade">
-                                    <c:if test="${trade.state==varStatus.index+1}">
+                    <% String[] stateNames= {"全部订单","待发货","配送中","已完成","已取消"};
+                        pageContext.setAttribute("stateNames",stateNames);
+                        int count=0;%>
+                    <c:forEach items="<%=stateNames%>" var="stateName" varStatus="varStatus">
+                        <label>
+                            <c:if test="${varStatus.count==1}">
+                                <input type="radio" name="tab" checked>
+                            </c:if>
+                            <c:if test="${varStatus.count>1}">
+                                <input type="radio" name="tab">
+                            </c:if>
+                            <span>${stateName}</span>
+                            <div>
+                                <table style="display: inline-table">
+                                    <c:forEach items="${trades}" var="trade">
+                                        <c:if test="${varStatus.count-1==trade.getState() || varStatus.count==1}">
+                                            <% count++;%>
+                                        </c:if>
+                                    </c:forEach>
+                                    <% pageContext.setAttribute("count",count);%>
+                                    <c:if test="${count!=0}">
                                         <tr>
-                                            <td><c:out value="${trade.getId()}"></c:out></td>
-                                            <td>${trade.getGoodsId()}</td>
-                                            <td>${trade.getGoodsCount()}</td>
-                                            <c:if test="${varStatus.count<4}">
-                                                <td><a href="/user/ucenter/trade/canceltrade?id=${trade.id}">取消此订单</a></td>
+                                            <td>订单号</td>
+                                            <td>商品id</td>
+                                            <td>商品图片</td>
+                                            <td>商品名称</td>
+                                            <td>商品数量</td>
+                                            <%--<td>买家id</td>--%>
+                                            <td>订单状态</td>
+                                            <c:if test="${varStatus.count<=3||varStatus.count==5}">
+                                                <td>操作</td>
                                             </c:if>
                                         </tr>
                                     </c:if>
-                                </c:forEach>
-                            </table>
-                        </div>
-                    </label>
-                </c:forEach>
-                <%--<label>
-                    <input type="radio" name="tab"   checked>
-                    <span>待发货</span>
-                    <div>
-                        <table>
-                            <tr>
-                                <td>订单号</td>
-                                <td>商品id</td>
-                                <td>商品数量</td>
-                                <td>操作</td>
-                            </tr>
-                            <c:if test="${trades==null}">
-                                <h1>暂无</h1>
-                            </c:if>
-                            <c:forEach items="${trades}" var="trade">
-                                <c:if test="${trade.state==1}">
-                                    <tr>
-                                        <td><c:out value="${trade.getId()}"></c:out></td>
-                                        <td>${trade.getGoodsId()}</td>
-                                        <td>${trade.getGoodsCount()}</td>
-                                        <td><a href="/user/ucenter/trade/canceltrade?id=${trade.id}">取消此订单</a></td>
-                                    </tr>
-                                </c:if>
-                            </c:forEach>
-
-                        </table>
-                        home-page
-                    </div>
-                </label>
-                <label>
-                    <input type="radio" name="tab">
-                    <span>配送中</span>
-                    <div>
-                        <table>
-                            <tr>
-                                <td>The table body</td>
-                                <td>with two columns</td>
-                            </tr>
-                        </table>
-                        list-page
-                    </div>
-                </label>
-                <label>
-                    <input type="radio" name="tab">
-                    <span>已完成</span>
-                    <div>news-page</div>
-                </label>
-                <label>
-                    <input type="radio" name="tab">
-                    <span>已发货</span>
-                    <div>mine-page</div>
-                </label>--%>
+                                    <c:if test="${count==0}">
+                                        <h1 style="margin-left: 10%;">暂无,<a href="/">马上选购</a></h1>
+                                    </c:if>
+                                    <% count=0;
+                                        pageContext.setAttribute("count",count);
+                                    %>
+                                    <c:forEach items="${trades}" var="trade">
+                                        <c:if test="${trade.state==varStatus.index||varStatus.index==0}">
+                                            <tr>
+                                                <td><c:out value="${trade.getId()}"></c:out></td>
+                                                <td>${trade.getGoods().getId()}</td>
+                                                <td><img style="max-width: 100px;max-height: 100px" src="/pics/shoes/${trade.getGoods().getId()}.jpg"></td>
+                                                <td>${trade.getGoods().getName()}</td>
+                                                <td>${trade.getGoodsCount()}</td>
+                                                <%--<td>${trade.getUserId()}</td>--%>
+                                                <td>${stateNames[trade.getState()]}</td>
+                                                    <%--<% int index=(int)pageContext.findAttribute("varStatus.index");%>--%>
+                                                    <%--<td><%=index%></td>--%>
+                                                <c:if test="${varStatus.count<=3||varStatus.count==5}">
+                                                    <c:if test="${trade.getState()==1}">
+                                                        <td><a href="/user/trade/cancel?id=${trade.id}">取消此订单</a></td>
+                                                    </c:if>
+                                                    <c:if test="${trade.getState()==2}">
+                                                        <td><a href="/user/trade/got?id=${trade.id}">确认已收货</a></td>
+                                                    </c:if>
+                                                    <%--<td><a href="/admin/trade/canceltrade?id=${trade.id}">取消此订单</a></td>--%>
+                                                </c:if>
+                                            </tr>
+                                        </c:if>
+                                    </c:forEach>
+                                </table>
+                            </div>
+                        </label>
+                    </c:forEach>
             </div>
         </div>
     </div>
